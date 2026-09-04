@@ -1,0 +1,268 @@
+/* ===============================
+   HOW IT WORKS
+================================ */
+
+.how-section {
+  width: 100%;
+  padding: 90px 6%;
+  background: #0e293c;
+  color: white;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.how-header {
+  margin-bottom: 65px;
+}
+
+.how-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+
+  font-weight: 700;
+}
+
+.how-header p {
+  margin-top: 28px;
+
+  color: #c9d2d7;
+
+  font-size: 20px;
+
+  line-height: 1.5;
+}
+
+
+/* ===============================
+   CARDS
+================================ */
+
+.steps-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 38px;
+}
+
+
+/* ===============================
+   CARD
+================================ */
+
+.step-card {
+  height: 330px;
+
+  perspective: 1200px;
+
+  cursor: pointer;
+}
+
+
+/* ===============================
+   CARD INNER
+================================ */
+
+.step-card-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* FLIP ON HOVER */
+
+.step-card:hover
+.step-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* ===============================
+   FRONT + BACK
+================================ */
+
+.step-front,
+.step-back {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 22px;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
+}
+
+
+/* ===============================
+   FRONT
+================================ */
+
+.step-front {
+  display: flex;
+
+  align-items: flex-start;
+
+  padding: 35px;
+
+  background: #1c3548;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+
+/* BIG NUMBER */
+
+.step-number {
+  color: #ffb900;
+
+  font-size: 64px;
+
+  line-height: 1;
+
+  font-weight: 600;
+}
+
+
+/* ===============================
+   BACK
+================================ */
+
+.step-back {
+  padding: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: #ffb900;
+
+  color: #102b3c;
+
+  transform: rotateY(180deg);
+
+  overflow: hidden;
+}
+
+
+/* SMALL NUMBER */
+
+.step-number-small {
+  position: absolute;
+
+  top: 25px;
+
+  right: 30px;
+
+  font-size: 45px;
+
+  font-weight: 600;
+
+  opacity: 0.35;
+}
+
+
+/* HEADING */
+
+.step-back h3 {
+  margin: 0;
+
+  max-width: 430px;
+
+  font-size: 27px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+
+/* DESCRIPTION */
+
+.step-back p {
+  max-width: 440px;
+
+  margin:
+    20px 0 0;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+
+  color: #243d4c;
+}
+
+
+/* ===============================
+   HOVER EFFECT
+================================ */
+
+.step-card:hover {
+  filter: drop-shadow(
+    0 20px 40px
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 800px) {
+
+  .how-section {
+    padding:
+      75px 20px;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .step-card {
+    height: 280px;
+  }
+
+  .how-header h2 {
+    font-size: 46px;
+
+    letter-spacing: -2px;
+  }
+
+  .how-header p {
+    font-size: 17px;
+  }
+
+}

@@ -1,0 +1,626 @@
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.services-section {
+  padding: 120px 5%;
+  background: #f4f4f1;
+  color: #101820;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.services-heading {
+  max-width: 1450px;
+  margin: 0 auto 55px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 50px;
+}
+
+.services-eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  color: #6d7a7e;
+}
+
+.services-heading h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 6vw, 85px);
+
+  line-height: .92;
+
+  letter-spacing: -4px;
+
+  font-weight: 700;
+}
+
+.services-heading h2 span {
+  color: #78878b;
+}
+
+.services-heading > p {
+  max-width: 390px;
+
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color: #657278;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.services-wrapper {
+  max-width: 1450px;
+
+  height: 620px;
+
+  margin: auto;
+
+  display: flex;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.service-card {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  border-radius: 18px;
+
+  background: #dedfdd;
+
+  transition:
+    flex 0.75s cubic-bezier(.22,.61,.36,1),
+    transform .4s ease;
+}
+
+
+/*
+   THIS IS THE IMPORTANT PART
+
+   Move cursor over card
+   → card becomes BIG
+*/
+
+.service-card:hover {
+  flex: 4;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.service-image {
+  position: absolute;
+
+  inset: 0;
+
+  background-size: cover;
+
+  background-position: center;
+
+  opacity: 0;
+
+  transform: scale(1.12);
+
+  transition:
+    opacity .7s ease,
+    transform 1s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* Image appears when cursor moves over card */
+
+.service-card:hover .service-image {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.service-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.2) 35%,
+      rgba(0,0,0,.88) 100%
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity .6s ease;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 1;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.service-number {
+  position: absolute;
+
+  top: 25px;
+
+  right: 25px;
+
+  z-index: 5;
+
+  font-size: 62px;
+
+  line-height: 1;
+
+  font-weight: 300;
+
+  color: rgba(20,30,35,.28);
+
+  transition:
+    color .5s ease;
+}
+
+.service-card:hover .service-number {
+  color: rgba(255,255,255,.65);
+}
+
+
+/* =========================================
+   CLOSED CONTENT
+========================================= */
+
+.closed-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  transition:
+    opacity .35s ease,
+    transform .5s ease;
+}
+
+
+/* Hide normal content on hover */
+
+.service-card:hover .closed-content {
+  opacity: 0;
+
+  transform:
+    translateX(-35px);
+}
+
+
+/* =========================================
+   CLOSED ICON
+========================================= */
+
+.closed-icon {
+  position: absolute;
+
+  top: 30px;
+
+  left: 30px;
+
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(20,30,35,.25);
+
+  border-radius: 50%;
+
+  font-size: 20px;
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+.service-card:hover .closed-icon {
+  transform:
+    rotate(45deg);
+}
+
+
+.closed-content h3 {
+  max-width: 220px;
+
+  margin: 0;
+
+  font-size: 26px;
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================
+   OPEN CONTENT
+========================================= */
+
+.open-content {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 6;
+
+  padding: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  color: white;
+
+  opacity: 0;
+
+  transform:
+    translateX(45px);
+
+  pointer-events: none;
+
+  transition:
+    opacity .5s ease,
+    transform .65s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* Show description */
+
+.service-card:hover .open-content {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================
+   OPEN TOP
+========================================= */
+
+.open-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.open-top span {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color:
+    rgba(255,255,255,.7);
+}
+
+.open-arrow {
+  width: 50px;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255,255,255,.4);
+
+  background:
+    rgba(255,255,255,.08);
+
+  font-size: 20px;
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+.service-card:hover .open-arrow {
+  transform:
+    rotate(45deg);
+}
+
+
+/* =========================================
+   OPEN BOTTOM
+========================================= */
+
+.open-bottom {
+  max-width: 650px;
+}
+
+.open-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #ffbd00;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.open-bottom h3 {
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 65px);
+
+  line-height: .95;
+
+  letter-spacing: -3px;
+}
+
+.open-bottom p {
+  max-width: 580px;
+
+  margin: 22px 0;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(255,255,255,.82);
+}
+
+
+/* =========================================
+   SERVICE BUTTON
+========================================= */
+
+.open-bottom a {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 14px 19px;
+
+  border-radius: 50px;
+
+  background: white;
+
+  color: #101820;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform .3s ease,
+    background .3s ease;
+}
+
+.open-bottom a span {
+  font-size: 20px;
+
+  transition:
+    transform .3s ease;
+}
+
+.open-bottom a:hover {
+  transform:
+    translateY(-4px);
+
+  background: #ffbd00;
+}
+
+.open-bottom a:hover span {
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================
+   PREMIUM CARD BORDER
+========================================= */
+
+.service-card:hover::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255,255,255,.2);
+
+  pointer-events: none;
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .services-section {
+    padding: 80px 20px;
+  }
+
+  .services-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .services-wrapper {
+    height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .service-card {
+    width: 100%;
+
+    min-height: 80px;
+
+    flex: 1;
+  }
+
+  .service-card:hover {
+    flex: 4;
+  }
+
+  .closed-content {
+    padding: 20px;
+  }
+
+  .closed-content h3 {
+    font-size: 20px;
+  }
+
+  .closed-icon {
+    top: 50%;
+
+    left: auto;
+
+    right: 20px;
+
+    transform:
+      translateY(-50%);
+  }
+
+  .open-content {
+    padding: 25px;
+  }
+
+  .open-bottom h3 {
+    font-size: 38px;
+
+    letter-spacing: -2px;
+  }
+
+  .open-bottom p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  .services-heading h2 {
+    font-size: 50px;
+
+    letter-spacing: -3px;
+  }
+
+  .services-wrapper {
+    height: 750px;
+  }
+
+  .service-number {
+    font-size: 40px;
+
+    top: 18px;
+
+    right: 18px;
+  }
+
+  .open-bottom h3 {
+    font-size: 32px;
+  }
+
+}

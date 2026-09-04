@@ -1,0 +1,829 @@
+/* ==========================================
+   PREMIUM ContactCTA
+========================================== */
+
+.premium-cta {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+
+  margin: 40px 20px;
+
+  padding: 95px 6% 35px;
+
+  overflow: hidden;
+
+  border-radius: 0 0 45px 45px;
+
+  background:
+    radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 191, 0, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #071b2c 0%,
+      #0c263b 48%,
+      #102f3d 100%
+    );
+
+  color: white;
+
+  border: 1px solid
+    rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 35px 100px
+    rgba(3, 15, 25, 0.25);
+
+  isolation: isolate;
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.cta-container {
+
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr 0.9fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* ==========================================
+   EYEBROW
+========================================== */
+
+.cta-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  color: #ffbf00;
+}
+
+.cta-eyebrow span {
+
+  width: 32px;
+
+  height: 1px;
+
+  background: #ffbf00;
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.cta-content h2 {
+
+  margin: 0;
+
+  max-width: 800px;
+
+  font-size: clamp(
+    48px,
+    5.2vw,
+    82px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -4px;
+
+  font-weight: 700;
+}
+
+.cta-content h2 span {
+
+  color: #b9c8cf;
+
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.cta-content > p {
+
+  max-width: 650px;
+
+  margin-top: 30px;
+
+  color: #aebec6;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.cta-buttons {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 38px;
+
+  flex-wrap: wrap;
+}
+
+
+/* PRIMARY */
+
+.cta-primary {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 18px 22px 18px 28px;
+
+  border-radius: 50px;
+
+  background: #ffba00;
+
+  color: #071b2c;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 15px 40px
+    rgba(255, 186, 0, 0.2);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.cta-primary b {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: #071b2c;
+
+  color: white;
+
+  font-size: 18px;
+
+  transition:
+    transform .35s ease;
+}
+
+.cta-primary:hover {
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(255, 186, 0, 0.35);
+}
+
+.cta-primary:hover b {
+
+  transform:
+    rotate(45deg);
+}
+
+
+/* SECONDARY */
+
+.cta-secondary {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 18px 25px;
+
+  border-radius: 50px;
+
+  border: 1px solid
+    rgba(255,255,255,0.25);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  transition:
+    background .3s ease,
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+.cta-secondary span {
+
+  font-size: 22px;
+
+  transition:
+    transform .3s ease;
+}
+
+.cta-secondary:hover {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border-color:
+    rgba(255,255,255,0.5);
+
+  transform:
+    translateY(-5px);
+}
+
+.cta-secondary:hover span {
+
+  transform:
+    translateX(6px);
+}
+
+
+/* ==========================================
+   NOTE
+========================================== */
+
+.cta-note {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  color: #738994;
+
+  font-size: 13px;
+}
+
+.pulse-dot {
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #45d5c9;
+
+  box-shadow:
+    0 0 0 0
+    rgba(69,213,201,.6);
+
+  animation:
+    pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  70% {
+
+    box-shadow:
+      0 0 0 10px
+      rgba(69,213,201,0);
+
+  }
+
+  100% {
+
+    box-shadow:
+      0 0 0 0
+      rgba(69,213,201,0);
+
+  }
+
+}
+
+
+/* ==========================================
+   CONTACT CARDS
+========================================== */
+
+.contact-cards {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.contact-card {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 24px 25px;
+
+  min-height: 95px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.035)
+    );
+
+  border: 1px solid
+    rgba(255,255,255,.13);
+
+  backdrop-filter:
+    blur(15px);
+
+  transition:
+    transform .4s cubic-bezier(.2,.8,.2,1),
+    border-color .4s ease,
+    background .4s ease;
+}
+
+
+.contact-card:hover {
+
+  transform:
+    translateX(-10px)
+    translateY(-4px);
+
+  border-color:
+    rgba(255,190,0,.5);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,190,0,.13),
+      rgba(255,255,255,.05)
+    );
+
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.contact-icon {
+
+  flex-shrink: 0;
+
+  width: 50px;
+
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255,255,255,.07);
+
+  color: #ffbf00;
+
+  transition:
+    transform .4s ease,
+    background .4s ease;
+}
+
+.contact-card:hover .contact-icon {
+
+  transform:
+    rotate(-8deg)
+    scale(1.1);
+
+  background:
+    rgba(255,191,0,.15);
+}
+
+
+.contact-icon svg {
+
+  width: 23px;
+
+  height: 23px;
+
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 1.7;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+
+/* ==========================================
+   CARD TEXT
+========================================== */
+
+.card-label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #718692;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  font-weight: 700;
+}
+
+.contact-card h3 {
+
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+.contact-card p {
+
+  margin: 6px 0 0;
+
+  color: #8fa1aa;
+
+  font-size: 12px;
+}
+
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.card-arrow {
+
+  position: absolute;
+
+  right: 23px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: #657b87;
+
+  font-size: 20px;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
+}
+
+.contact-card:hover .card-arrow {
+
+  color: #ffbf00;
+
+  transform:
+    translate(5px,-50%);
+}
+
+
+/* ==========================================
+   ORBITS
+========================================== */
+
+.cta-orbit {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.orbit-one {
+
+  width: 500px;
+
+  height: 500px;
+
+  right: -180px;
+
+  top: -260px;
+
+  border: 1px solid
+    rgba(255,190,0,.15);
+
+  animation:
+    orbitRotate 18s linear infinite;
+}
+
+.orbit-two {
+
+  width: 700px;
+
+  height: 700px;
+
+  right: -280px;
+
+  top: -360px;
+
+  border: 1px solid
+    rgba(62,210,207,.08);
+
+  animation:
+    orbitRotate 25s linear infinite reverse;
+}
+
+.orbit-three {
+
+  width: 300px;
+
+  height: 300px;
+
+  left: -170px;
+
+  bottom: -190px;
+
+  border: 1px solid
+    rgba(255,190,0,.1);
+
+  animation:
+    orbitRotate 14s linear infinite;
+}
+
+@keyframes orbitRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* ==========================================
+   GLOW
+========================================== */
+
+.cta-glow {
+
+  position: absolute;
+
+  width: 500px;
+
+  height: 500px;
+
+  right: 10%;
+
+  top: 10%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,190,0,.08),
+      transparent 65%
+    );
+
+  filter:
+    blur(10px);
+
+  animation:
+    glowMove 7s ease-in-out infinite alternate;
+
+  pointer-events: none;
+}
+
+@keyframes glowMove {
+
+  from {
+    transform:
+      translate(0,0)
+      scale(1);
+  }
+
+  to {
+    transform:
+      translate(-80px,60px)
+      scale(1.2);
+  }
+
+}
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.cta-bottom {
+
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 75px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid
+    rgba(255,255,255,.08);
+
+  color: #607681;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  font-weight: 700;
+}
+
+.cta-bottom i {
+
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #ffbf00;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+  .cta-container {
+
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .contact-cards {
+
+    max-width: 700px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .premium-cta {
+
+    margin: 20px 10px;
+
+    padding:
+      60px 25px 25px;
+
+    border-radius:
+      0 0 30px 30px;
+  }
+
+  .cta-content h2 {
+
+    font-size: 48px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .cta-content > p {
+
+    font-size: 16px;
+  }
+
+  .cta-buttons {
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+
+    justify-content: center;
+  }
+
+  .contact-card {
+
+    padding: 20px 17px;
+
+  }
+
+  .contact-card h3 {
+
+    font-size: 16px;
+
+    padding-right: 20px;
+  }
+
+  .contact-card p {
+
+    font-size: 11px;
+  }
+
+  .contact-icon {
+
+    width: 43px;
+
+    height: 43px;
+  }
+
+  .cta-bottom {
+
+    margin-top: 50px;
+
+    gap: 10px;
+  }
+
+}
